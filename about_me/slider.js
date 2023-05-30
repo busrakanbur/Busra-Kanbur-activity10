@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var totalSlides = $('#slider li').length; // Get the total number of slides
+    var totalSlides = $('#slider li').length;
     var slider = $('#slider').bxSlider({
         auto: true,
         minSlides: 1,
@@ -12,12 +12,11 @@ $(document).ready(function() {
         pager: true,
         pagerCustom: '#pager',
         onSlideAfter: function($slideElement, oldIndex, newIndex) {
-            var slideNumber = newIndex + 1; // Calculate the current slide number
-            $('#pager').text(slideNumber + '/' + totalSlides); // Update the pager with the current slide number and total slides
+            var slideNumber = newIndex + 1;
+            $('#pager').text(slideNumber + '/' + totalSlides);
         }
     });
 
-    // Initialize the pager with the initial slide number
     var initialSlideNumber = slider.getCurrentSlide() + 1;
     $('#pager').text(initialSlideNumber + '/' + totalSlides);
 });
